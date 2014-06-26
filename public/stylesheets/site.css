@@ -1,0 +1,1520 @@
+/*******************************
+        Highlighted Colors
+*******************************/
+
+::-webkit-selection {
+  background-color: #FFFFCC;
+  color: #555555;
+}
+::-moz-selection {
+  background-color: #FFFFCC;
+  color: #555555;
+}
+::selection {
+  background-color: #FFFFCC;
+  color: #555555;
+}
+
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection {
+  background-color: #F1C1C2;
+  color: #222222;
+}
+h1::selection,
+h2::selection,
+h3::selection {
+  background-color: #F1C1C2;
+  color: #222222;
+}
+.ui *::-moz-selection {
+  background-color: #CCE2FF;
+}
+.ui *::selection {
+  background-color: #CCE2FF;
+}
+
+/*******************************
+             Global
+*******************************/
+
+html,
+body {
+  font-size: 15px;
+}
+
+body#malwarelab {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+  background: #FCFCFC url(images/bg.jpg) repeat;
+  margin: 0px;
+  padding: 0px;
+  color: #555555;
+  min-width: 320px;
+}
+body > .content  {
+  background: #FCFCFC url(../images/bg.jpg) repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif/*rtl:prepend:"Droid Arabic Kufi","Droid Sans", */;
+}
+
+/*
+p,
+ul,
+.ui.grid,
+li {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size-adjust: none;
+}*/
+
+
+ul.list {
+  list-style-type: disc;
+}
+ul.list li {
+  list-style-position: outside;
+}
+
+
+/* text and headers */
+h1 {
+  margin: 0px 0px 20px;
+  padding: 50px 0px 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+h4 + p {
+  margin: 0px 0px 20px;
+}
+pre {
+  background-color: #F0F0F0;
+}
+/*rtl:ignore*/
+pre.console {
+  background-color: transparent;
+  line-height: 1.6;
+  font-family:  'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  height: 300px;
+  overflow: auto;
+  direction:ltr;
+}
+code {
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  font-family: Courier New;
+  font-size: 14px;
+  margin: 0.25em;
+  padding: 0.125em 0.5em;
+  vertical-align: middle;
+}
+pre code {
+  border: none;
+  padding: 0px;
+}
+table pre,
+table code {
+  margin: 0px !important;
+  padding: 0px;
+  background-color: transparent;
+}
+p {
+  margin: 1em 0em;
+}
+p:first-child {
+  margin-top: 0em;
+}
+p:last-child {
+  margin-bottom: 0em;
+}
+/* links */
+a {
+  color: #009FDA;
+  text-decoration: none;
+}
+a:hover {
+  color: #00BAFF;
+}
+
+#malwarelab #menu .item {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+#malwarelab #menu .hide.item {
+  display: none;
+}
+
+#malwarelab #menu .item .item {
+  font-size: 0.875rem;
+}
+#malwarelab .segment > .dimmer {
+  z-index: 800;
+}
+
+/* segment headers */
+#malwarelab > .content > .page > .segment,
+#malwarelab > .segment {
+  margin: 0px 0px 3em;
+  padding-top: 70px;
+  padding-bottom: 30px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+#malwarelab > .tab.segment {
+  padding-bottom: 0em;
+  margin-bottom: 2em;
+}
+
+#malwarelab > .tab.segment .fixed .tabular.menu {
+  position: fixed;
+  top: 50px;
+}
+#malwarelab > .tab.segment .vertical.menu {
+  display: none;
+  margin: 2rem 0em 1rem;
+}
+#malwarelab > .tab.segment .tabular.menu {
+  margin: 2rem 0em 0em;
+  border-bottom: none;
+}
+#malwarelab > .tab.segment .tabular.menu .active.item {
+  background-color: #FAFAFA;
+  border-bottom-color: #FAFAFA;
+}
+
+
+#malwarelab .download.menu {
+  margin-top: 0em;
+  margin-bottom: 3rem;
+}
+
+#malwarelab .main.menu {
+  min-width: 320px;
+  z-index: 900;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-transition: margin 0.3s ease;
+  -moz-transition: margin 0.3s ease;
+  -o-transition: margin 0.3s ease;
+  -ms-transition: margin 0.3s ease;
+  transition: margin 0.3s ease;
+}
+#malwarelab .main.menu iframe {
+  margin: 0px 0px 0px 0px;
+}
+/* lists */
+#malwarelab .features {
+  list-style-position: inside;
+  margin: 10px 0px 0px;
+  padding: 0px;
+}
+#malwarelab .features li {
+  list-style-type: disc;
+  margin: 0px 0px 10px;
+  font-weight: bold;
+}
+
+#malwarelab .advertisement {
+  float: right;
+  margin-left: 2em;
+}
+
+/*--------------
+    Intro
+---------------*/
+
+body.guide .main h3 {
+  margin: 2rem 0em 0.5rem;
+}
+body.guide .main.container > * {
+  max-width: 800px;
+}
+
+
+/*--------------
+    Playground
+---------------*/
+
+#malwarelab.playground {
+  min-width: 1000px;
+}
+#malwarelab.playground > .title.grid {
+  padding-top: 60px;
+
+}
+#malwarelab .ui.items .menu .item {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/*--------------
+    Items
+---------------*/
+
+#malwarelab.item .text.malwarelab .item {
+  min-height: 150px;
+}
+
+
+/*--------------
+    Masthead
+---------------*/
+#malwarelab .error.masthead {
+  position: absolute;
+  margin-top: -290px;
+  top: 50%;
+  width: 100%;
+}
+#malwarelab .error.masthead .container {
+  position: relative;
+  z-index: 100;
+}
+#malwarelab .masthead {
+  position: relative;
+  overflow: hidden;
+  background-color: #00B5AD;
+  text-align: center;
+  margin-top: 38px;
+  padding: 50px 0px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+#malwarelab .masthead:before {
+  background: #00B5AD url(/images/tile-bg.png) repeat fixed 0% 0%;
+  position: absolute;
+  z-index: 1;
+  width: 500%;
+  height: 500%;
+  top: 0px;
+  left: 0px;
+  content: '';
+
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  -webkit-animation-name: masthead;
+  -moz-animation-name: masthead;
+  -o-animation-name: masthead;
+  animation-name: masthead;
+
+  -webkit-animation-duration: 80s;
+  -moz-animation-duration: 80s;
+  -ms-animation-duration: 80s;
+  -o-animation-duration: 80s;
+  animation-duration: 80s;
+
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@keyframes masthead {
+ 0% {
+    background-position: 0% 0%;
+ }
+ 50% {
+    background-position: -50% -100%;
+ }
+ 100% {
+    background-position: -100% -200%;
+ }
+
+}
+
+@-moz-keyframes masthead {
+ 0% {
+   background-position: 0% 0%;
+ }
+ 50% {
+   background-position: -50% -100%;
+ }
+ 100% {
+   background-position: -100% -200%;
+ }
+
+}
+
+@-webkit-keyframes masthead {
+ 0% {
+   background-position: 0% 0%;
+ }
+ 50% {
+   background-position: -50% -100%;
+ }
+ 100% {
+   background-position: -100% -200%;
+ }
+
+}
+
+@-ms-keyframes masthead {
+ 0% {
+   background-position: 0% 0%;
+ }
+ 50% {
+   background-position: -50% -100%;
+ }
+ 100% {
+   background-position: -100% -200%;
+ }
+
+}
+
+@-o-keyframes masthead {
+ 0% {
+   background-position: 0% 0%;
+ }
+ 50% {
+   background-position: -50% -100%;
+ }
+ 100% {
+   background-position: -100% -200%;
+ }
+
+}
+#malwarelab .masthead .grid {
+  position: relative;
+  z-index: 2;
+}
+#malwarelab .masthead .column {
+  display: table;
+}
+#malwarelab .introduction {
+  display: table-cell;
+  vertical-align: top;
+  width: 100%;
+}
+#malwarelab .advertisement {
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 2em;
+}
+#malwarelab #carbonads-container {
+  float: right;
+}
+#malwarelab .advertisement .carbonad {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+#malwarelab .advertisement .carbonad-text {
+  height: auto;
+  font-size: 12px;
+  line-height: 1.3;
+}
+#malwarelab .carbonad-tag {
+  text-align: left;
+}
+#malwarelab .inverted.advertisement .carbonad {
+  background-color: rgba(0, 31, 30, 0.5);
+  border: none;
+  overflow: hidden;
+  height: auto;
+  padding: 6px 8px 15px;
+}
+#malwarelab .inverted.advertisement .carbonad-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+#malwarelab .inverted.advertisement .carbonad-tag {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+#malwarelab .inverted.advertisement .carbonad-tag a {
+  color: rgba(255, 255, 255, 0.8);
+}
+#malwarelab .inverted.advertisement .carbonad-tag a:hover {
+  color: #FFFFFF;
+}
+
+
+#malwarelab .masthead .labeled.button {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: auto !important;
+  margin-right: 1em;
+}
+#malwarelab .masthead.segment h1 {
+  font-size: 5em;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin: -20px 0px 0px;
+  padding-bottom: 0px;
+}
+#malwarelab .masthead strike {
+  color: rgba(0, 0, 0, 0.2);
+}
+#malwarelab .masthead h2 {
+  font-weight: normal;
+  margin: -10px 0 16px 0px;
+  font-size: 1.75em;
+  border-bottom: none;
+  line-height: 1;
+}
+#malwarelab .masthead .menu {
+  width: 375px;
+}
+#malwarelab .masthead p {
+  font-size: 1.5em;
+  margin: 1em 0em 1.5em;
+  padding: 0px;
+}
+#malwarelab .footer.link.list {
+  display: block;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+
+/*--------------
+  Transparent
+---------------*/
+
+.ui.transparent.menu {
+  opacity: 0.95;
+}
+
+
+/* content */
+#malwarelab .container {
+  width: 915px;
+  margin: 0px auto;
+}
+
+#malwarelab .solid,
+#malwarelab .stripe {
+  padding: 50px 0px;
+}
+
+#malwarelab .dark.stripe {
+  background-color: #333333;
+  background: url(/images/dark-bg.png) repeat;
+  color: #FFFFFF;
+}
+#malwarelab .stripe .column .label {
+  margin-bottom: 1em;
+}
+
+#malwarelab .solid {
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+#malwarelab .solid .column {
+  color: #555555;
+}
+#malwarelab .solid .column p b {
+  color: rgba(0, 0, 0, 0.9);
+}
+#malwarelab .solid .column p {
+  color: rgba(0, 0, 0, 0.5);
+}
+#malwarelab .stripe .message {
+  margin: 2em 0em;
+}
+
+
+#malwarelab .shortcuts {
+  float: right;
+  clear: both;
+}
+#malwarelab .launch.button {
+  position: fixed;
+  top: 63px;
+  z-index: 500;
+  width: 70px;
+}
+#malwarelab.index .main.menu {
+  top: 0px;
+}
+#malwarelab.index pre.console {
+  height: 120px;
+}
+#malwarelab.index .attached.launch.button {
+  top: 96px;
+}
+#malwarelab .launch.button .text {
+  display: inline-block;
+  display: none;
+}
+
+#malwarelab .main.container {
+  position: relative;
+  padding-bottom: 100px;
+}
+#malwarelab .main.container > h2 {
+  -webkit-transition: 0.5s color ease;
+  -moz-transition: 0.5s color ease;
+  -o-transition: 0.5s color ease;
+  -ms-transition: 0.5s color ease;
+  transition: 0.5s color ease;
+}
+#malwarelab .swap {
+  background: url(http://beta.myfav.es/images/themes/bg/subtle/subtle-handmade-paper.png) repeat;
+}
+#malwarelab .peek {
+  position: absolute;
+  top: 0px;
+  right: -200px;
+  width: 180px;
+/*
+  -webkit-transition: padding 0.3s ease;
+  -moz-transition: padding 0.3s ease;
+  -o-transition: padding 0.3s ease;
+  -ms-transition: padding 0.3s ease;
+  transition: padding 0.3s ease;*/
+}
+
+#malwarelab .ui.tab.segment {
+  padding: 1.5em 2em;
+}
+#malwarelab .malwarelab .circular.segment {
+  width: 175px;
+  height: 175px;
+}
+
+#malwarelab.popup .malwarelab .popup {
+  color: #FF0000;
+}
+#malwarelab .position.malwarelab .icon {
+  position: absolute;
+  margin: 0em;
+  padding: 0.5em !important;
+}
+#malwarelab .position.malwarelab > .segment {
+  width: 250px;
+  height: 250px;
+}
+#malwarelab .position.malwarelab .segment .icon:nth-of-type(1) {
+  top: 3em;
+  left: 3em;
+}
+#malwarelab .position.malwarelab .segment .icon:nth-of-type(2) {
+  top: 3em;
+  left: 50%;
+  margin-left: -1em;
+}
+#malwarelab .position.malwarelab .segment .icon:nth-of-type(3) {
+  top: 3em;
+  right: 3em;
+}
+#malwarelab .position.malwarelab .segment .icon:nth-of-type(4) {
+  top: 50%;
+  margin-top: -1em;
+  right: 3em;
+}
+#malwarelab .position.malwarelab .segment .icon:nth-of-type(5) {
+  bottom: 3em;
+  right: 3em;
+}
+#malwarelab .position.malwarelab .segment .icon:nth-of-type(6) {
+  bottom: 3em;
+  left: 50%;
+  margin-left: -1em;
+}
+#malwarelab .position.malwarelab .segment .icon:nth-of-type(7) {
+  bottom: 3em;
+  left: 3em;
+}
+#malwarelab .position.malwarelab .segment .icon:nth-of-type(8) {
+  top: 50%;
+  margin-top: -1em;
+  left: 3em;
+}
+
+#malwarelab .main.ui.grid {
+  position: relative;
+}
+#malwarelab .malwarelab .toggle.button {
+  min-width: 200px;
+}
+#malwarelab .malwarelab .language.label {
+  margin: 1em 0em 0.75em;
+}
+#malwarelab .icon.malwarelab .grid {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+#malwarelab .icon.malwarelab .grid .code {
+  position: static;
+}
+#malwarelab .icon.malwarelab .grid .column {
+  opacity: 0.8;
+  margin-bottom: 2em;
+  text-align: center;
+  color: #888888;
+
+  -webkit-transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -moz-transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -o-transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -ms-transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+}
+#malwarelab .icon.malwarelab .column .icon {
+  opacity: 1;
+  color: #333333;
+  display: block;
+  margin: 0em auto 0.25em;
+  font-size: 2em;
+
+  -webkit-transition:
+    all 0.2s ease-out
+  ;
+  -moz-transition:
+    all 0.2s ease-out
+  ;
+  -o-transition:
+    all 0.2s ease-out
+  ;
+  -ms-transition:
+    all 0.2s ease-out
+  ;
+  transition:
+    all 0.2s ease-out
+  ;
+  -webkit-backface-visibility: hidden;
+}
+#malwarelab .icon.malwarelab .grid .column:hover .icon {
+  color: #009FDA;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}
+#malwarelab .another.icon.malwarelab {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#malwarelab .another.malwarelab {
+  margin-top: 0em;
+  padding-top: 2em;
+  border-top: none;
+}
+#malwarelab .another.malwarelab i.code {
+  top: 0px;
+}
+#malwarelab .malwarelab > p {
+  color: #888888;
+}
+
+#malwarelab .peek .menu .active:nth-child(1) {
+  border-right-color: #00B9F0;
+  color: #00B9F0;
+}
+#malwarelab .peek .menu .active:nth-child(2) {
+  border-right-color: #56BB73;
+  color: #56BB73;
+}
+#malwarelab .peek .menu .active:nth-child(3) {
+  border-right-color: #EF3F49;
+  color: #EF3F49;
+}
+#malwarelab .peek .menu .active:nth-child(4) {
+  border-right-color: #A24096;
+  color: #A24096;
+}
+#malwarelab .main h2.group {
+  color: #A24096;
+}
+
+#malwarelab .peek > .menu {
+  margin-left: 0px;
+  width: 180px;
+}
+/* #malwarelab .peek > .menu.animating > .active {
+  background-color: transparent;
+  border: none;
+  padding-left: 0.95em;
+}
+#malwarelab .peek > .menu.animating > .active:after {
+  background-color: #FFFFFF;
+} */
+
+/* overview mode */
+
+#malwarelab.overview h2.ui.header {
+  margin-bottom: 0em;
+}
+/*
+#malwarelab .ui.header ~ .ui.message a,
+#malwarelab .ui.header ~ p a {
+  font-weight: bold;
+}
+*/
+#malwarelab.overview .malwarelab {
+  margin: 0em;
+  min-height: 0px !important;
+  overflow: hidden;
+  padding: 0.5em 0em;
+}
+#malwarelab.overview .malwarelab .ui.header,
+#malwarelab.overview .malwarelab p {
+  float: right;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+#malwarelab.overview .malwarelab p {
+  float: left;
+  font-size: 1rem;
+  padding: 0em 0em 0em 0.3em;
+  width: auto;
+}
+
+
+#malwarelab .sticky-wrapper.stuck {
+  height: 0px !important;
+  -webkit-transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -moz-transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -o-transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  -ms-transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+  transition:
+    margin-left 0.3s ease-out,
+    opacity 0.3s ease-out
+  ;
+}
+#malwarelab .sticky-wrapper.stuck .peek {
+  position: fixed;
+  top: 75px;
+/*  left: 50%;
+  margin-left: -685px;*/
+}
+#malwarelab.left.pushed .sticky-wrapper .peek {
+  margin-left: -132.5px;
+  padding-left: 132.5px;
+}
+
+#malwarelab.left.pushed .sticky-wrapper.stuck .peek {
+  margin-left: -817.5px;
+  padding-left: 132.5px;
+}
+
+#malwarelab .settings.table {
+  margin-bottom: 20px;
+}
+#malwarelab .settings.table td:first-child {
+  font-weight: bold;
+}
+#malwarelab .settings.table td:nth-child(2n) {
+  width: 100px;
+}
+
+#malwarelab .existing.annotation {
+  /*display: none;*/
+}
+/*#malwarelab .segment p:first-of-type {
+  margin-top: 0em;
+}*/
+
+/* malwarelab code reskin */
+#malwarelab div.code.hide {
+  display: none;
+}
+/*rtl:ignore*/
+#malwarelab div.code {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  text-align: left;
+  direction:ltr;
+}
+#malwarelab div.code {
+  margin: -1em;
+  font-size: 14px;
+  padding: 5px 0px;
+  background-color: transparent;
+}
+#malwarelab .label + div.code {
+  margin-top: 1.5em;
+}
+#malwarelab div.code .ace_gutter {
+  background-color: #FAFAFA;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  color: #999999;
+}
+#malwarelab div.code .ace_gutter-cell {
+  padding-right: 20px;
+  padding-left: 10px;
+}
+#malwarelab div.code .ace_bracket {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+#malwarelab div.code .ace_indent-guide {
+  position: relative;
+  background: none;
+}
+/* #malwarelab div.code .ace_indent-guide:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  border-left: 1px solid #ECF5F3;
+} */
+
+#malwarelab table .instructive.segment {
+  background-color: transparent;
+  border: 0px;
+  box-shadow: none;
+  padding: 0em;
+  margin: -0.4em -0.7em;
+}
+#malwarelab table .instructive.segment .code {
+  margin: 0em;
+}
+#malwarelab table .instructive.segment div.code .ace_identifier,
+#malwarelab table .instructive.segment div.code .ace_line {
+  color: #555555;
+}
+
+#malwarelab .ui.label + .instructive.segment {
+  margin-top: 0em;
+}
+#malwarelab .instructive.segment em {
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.4);
+}
+#malwarelab .instructive.segment .title + em {
+  float: right;
+}
+
+
+#malwarelab div.code .ace_gutter,
+#malwarelab div.code .ace_scroller {
+  background-color: transparent;
+  overflow: visible;
+  margin: 14px 10px;
+}
+#malwarelab div.code .ace_scrollbar {
+  overflow: hidden;
+  background-color: transparent;
+}
+
+#malwarelab div.code .ace_line,
+#malwarelab div.code .ace_line span {
+  -webkit-transition:
+    color 1s ease-out
+  ;
+  -moz-transition:
+    color 1s ease-out
+  ;
+  -o-transition:
+    color 1s ease-out
+  ;
+  -ms-transition:
+    color 1s ease-out
+  ;
+  transition:
+    color 1s ease-out
+  ;
+}
+#malwarelab div.code .ace_line {
+  color: #555555;
+}
+#malwarelab div.code .ace_tag {
+  color: #DCBCD3;
+}
+#malwarelab div.code .ace_attribute-name {
+  color: #F4C5C5;
+}
+#malwarelab div.code .ace_content {
+}
+#malwarelab div.code .ace_string {
+  color: #00A59D;
+}
+#malwarelab div.code .ace_cursor {
+  border-left: none;
+}
+#malwarelab div.code .ace_paren {
+  color: #CCCCCC;
+}
+#malwarelab div.code .ace_keyword {
+  color: #CCCCCC;
+}
+#malwarelab div.code .ace_identifier {
+  color: #CCCCCC;
+}
+#malwarelab div.code .ace_punctuation {
+  color: #CCCCCC;
+}
+#malwarelab div.code .ace_active_line {
+  background-color: #FBFBE5;
+}
+
+/* Hovered Style */
+
+#malwarelab div.code:hover .ace_line {
+  color: #555555;
+}
+#malwarelab div.code:hover .ace_tag {
+  color: #892A6F;
+}
+#malwarelab div.code:hover .ace_attribute-name {
+  color: #934E4E;
+}
+#malwarelab div.code:hover .ace_content {
+}
+#malwarelab div.code:hover .ace_string {
+  color: #00A59D;
+}
+#malwarelab div.code:hover .ace_cursor {/*
+  border-left: 1px solid #AAAAAA;*/
+}
+#malwarelab div.code:hover .ace_paren {
+  color: #555555;
+}
+#malwarelab div.code:hover .ace_keyword {
+  color: #555555;
+}
+#malwarelab div.code:hover .ace_identifier {
+  color: #555555;
+}
+#malwarelab div.code:hover .ace_scrollbar {
+  overflow: hidden !important;
+}
+#malwarelab div.code:hover .ace_punctuation {
+  color: #555555;
+}
+#malwarelab div.code:hover .ace_active_line {
+  background-color: #FBFBE5;
+}
+
+
+
+/* malwarelabs */
+#malwarelab .no.malwarelab i.code {
+  display: none;
+}
+
+#malwarelab .malwarelab:first-child,
+#malwarelab h2 + .malwarelab,
+#malwarelab h3 + .malwarelab,
+#malwarelab h4 + .malwarelab {
+  margin-top: 0px;
+  padding-top: 0px;
+  border-top: none;
+}
+#malwarelab h2 + .malwarelab i.code,
+#malwarelab h3 + .malwarelab i.code,
+#malwarelab h4 + .malwarelab i.code {
+  top: 0px;
+}
+#malwarelab .malwarelab > h4 {
+  margin-bottom: 0em;
+}
+
+#malwarelab .clearing.malwarelab {
+  clear: both;
+}
+#malwarelab .malwarelab {
+  margin: 1em 0em;
+  padding: 1em 0em;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+/*  clear: both;*/
+  position: relative;
+}
+#malwarelab .malwarelab .grid i.code {
+  right: 25%;
+}
+#malwarelab .malwarelab i.code {
+  cursor: pointer;
+  position: absolute;
+  top: 2em;
+  right: 0px;
+  opacity: 0.2;
+
+  font-size: 18px;
+  color: #555555;
+
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+
+#malwarelab .malwarelab > i.code:before {
+  font-family: 'Basic Icons';
+  content: '\e714';
+}
+#malwarelab .malwarelab:hover i.code {
+  opacity: 0.7;
+}
+#malwarelab .malwarelab:hover i.code:hover {
+  opacity: 1;
+}
+
+#malwarelab .highlighted.malwarelab {
+  min-height: 390px;
+}
+#malwarelab .highlighted.malwarelab .grid,
+#malwarelab .ui.type.items .image .grid {
+  -webkit-animation: grid 15s ease infinite;
+  -moz-animation: grid 15s ease infinite;
+  background-color: #F6F6F6;
+  margin: 0em auto;
+}
+#malwarelab .highlighted.malwarelab .grid .row,
+#malwarelab .ui.type.items .image .grid .row {
+  border-top: 1px solid #DDDDDD;
+}
+#malwarelab .highlighted.malwarelab .grid .column,
+#malwarelab .ui.type.items .image .grid .column {
+  background-color: #F4F4F4;
+  min-height: 50px;
+  -webkit-box-shadow: 0px 0px 0px 1px #E2E2E2;
+  -moz-box-shadow: 0px 0px 0px 1px #E2E2E2;
+  box-shadow: 0px 0px 0px 1px #E2E2E2;
+}
+#malwarelab .highlighted.malwarelab .grid .segment,
+#malwarelab .ui.type.items .image .grid .segment {
+  min-height: 50px;
+  text-align: center;
+  padding-left: 0em;
+  padding-right: 0em;
+  -webkit-box-shadow: 0px 0px 0px 1px #DDDDDD;
+  -moz-box-shadow: 0px 0px 0px 1px #DDDDDD;
+  box-shadow: 0px 0px 0px 1px #DDDDDD;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+@-webkit-keyframes grid {
+  0% {
+    width: 100%;
+  }
+  40% {
+    width: 70%;
+  }
+  60% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-moz-keyframes grid {
+  0% {
+    width: 100%;
+  }
+  40% {
+    width: 70%;
+  }
+  60% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes grid {
+  0% {
+    width: 100%;
+  }
+  40% {
+    width: 70%;
+  }
+  60% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+#malwarelab .ui.type.items > .item {
+  min-height: 255px;
+}
+
+#malwarelab .ui.type.items > .item > .image {
+  padding: 1em;
+  height: 165px;
+  vertical-align: middle;
+}
+
+/* some demo formatting */
+.ui.menu p:only-child {
+  margin: 0px;
+}
+.ui.menu a {
+  cursor: pointer;
+}
+
+
+body.progress .ui.progress .bar {
+  -webkit-animation: finish 10s ease-in-out infinite;
+  -moz-animation: finish 10s ease-in-out infinite;
+  -ms-animation: finish 10s ease-in-out infinite;
+  animation: finish 10s ease-in-out infinite;
+}
+
+@-webkit-keyframes finish {
+  0% {
+    width: 0%;
+  }
+  40% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-moz-keyframes finish {
+  0% {
+    width: 0%;
+  }
+  40% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes finish {
+  0% {
+    width: 0%;
+  }
+  40% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+#malwarelab.feed .malwarelab .segment {
+  max-width: 800px;
+}
+
+#malwarelab .fixed .launch {
+  display: none;
+}
+#malwarelab .designer .icon {
+  font-family: 'Basic Icons';
+}
+
+#malwarelab .fixed.column .sticky-wrapper {
+  height: 0px !important;
+}
+
+#malwarelab .fixed.column .fixed,
+#malwarelab .fixed.segment .fixed {
+  position: fixed;
+  top: 65px;
+  -webkit-perspective: 2000px;
+  -moz-perspective: 2000px;
+  -ms-perspective: 2000px;
+  perspective: 2000px;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+
+
+@media only screen and (max-width : 1725px) {
+  #malwarelab .container {
+    width: auto;
+    margin-right: 300px;
+    margin-left: 100px;
+  }
+  #malwarelab.index .container {
+    margin-left: 8em;
+    margin-right: 8em;
+  }
+  #malwarelab .sticky-wrapper.stuck .peek {
+    margin-right: 0px;
+    right: 101px;
+  }
+  #malwarelab.left.pushed .sticky-wrapper .peek {
+    padding-left: 275px;
+    margin-left: -275px;
+  }
+  #malwarelab.left.pushed .sticky-wrapper.stuck .peek {
+    margin-left: 0px;
+    padding-left: 275px;
+  }
+}
+@media only screen and (max-width : 1500px) {
+  #malwarelab.index .icon.header .icon {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width : 1050px) {
+  #malwarelab .fixed .section,
+  #malwarelab .fixed .title b {
+    display: none;
+  }
+  #malwarelab .stripe .header .code.icon {
+    display: none;
+  }
+  #malwarelab .fixed .container {
+    width: auto;
+    margin: 0px auto;
+  }
+  #malwarelab .attached.launch.button {
+    display: none;
+  }
+  #malwarelab .fixed .launch {
+    display: inline-block;
+  }
+  #malwarelab .sticky-wrapper {
+    display: none;
+  }
+  #malwarelab .container {
+    width: auto;
+    margin: 0% 30px 0px;
+  }
+}
+@media only screen and (max-width : 780px) {
+  pre.console {
+    height: 150px;
+  }
+  #malwarelab.index .masthead {
+    text-align: center;
+    padding: 50px 0px 15px;
+  }
+  #malwarelab.index .masthead h1 {
+    font-size: 3em;
+  }
+  #malwarelab.index .masthead h1 .icon {
+    display: none;
+  }
+  #malwarelab.index .masthead .button {
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+  }
+  #malwarelab.index .masthead h2 {
+    font-size: 1.25em;
+    margin: 0em 0em 1em;
+  }
+  #malwarelab.index .masthead p {
+    font-size: 1.35em;
+  }
+  #malwarelab.index .container {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+  #malwarelab.index .icon.header .icon {
+    font-size: 3em;
+  }
+  #malwarelab .introduction {
+    display: block;
+  }
+  #malwarelab .advertisement {
+    display: block;
+    margin: 1em 0em;
+    padding: 0em;
+  }
+  #malwarelab #menu .hide.item {
+    display: block;
+  }
+  #malwarelab #menu .item > .icon {
+    font-size: 1em !important;
+  }
+  #malwarelab .inverted.advertisement .carbonad {
+    height: 109px;
+  }
+  #malwarelab .inverted.advertisement .carbonad-img {
+    margin-top: 0px;
+  }
+  #malwarelab #carbonads-container {
+    float: none;
+  }
+  #malwarelab .carbonad {
+    width: auto;
+  }
+  #malwarelab .carbonad-text,
+  #malwarelab .carbonad-tag {
+    float: none;
+    display: block;
+    text-align: left;
+    margin-left: 160px;
+    width: 170px;
+  }
+}
+
+
+@media only screen and (max-width : 600px) {
+  #malwarelab .icon.malwarelab .grid .column {
+    width: 33.33%;
+  }
+}
+
+
+@media only screen and (max-width : 600px) {
+  #malwarelab .main.menu .borderless.item {
+    display: none;
+  }
+  #malwarelab .fixed .developer,
+  #malwarelab .fixed .designer,
+  #malwarelab .fixed .previous,
+  #malwarelab .fixed .next {
+    display: none;
+  }
+  #malwarelab > .tab.segment .tabular.menu {
+    display: none;
+  }
+
+  #malwarelab > .tab.segment .vertical.menu {
+    display: block;
+  }
+}
+@media only screen and (max-width : 450px) {
+  #malwarelab .main.menu .icon.item {
+    display: none;
+  }
+  #malwarelab .main.menu .github.item {
+    display: block;
+  }
+  #malwarelab .main.menu .github.item:before {
+    display: none;
+  }
+  #malwarelab .carbonad {
+    height: 135px;
+  }
+  #malwarelab .carbonad .carbonad-text {
+    width: 90px;
+  }
+}
+
+
+
+@media only screen and (min-width : 1725px) {
+  #malwarelab .container {
+    width: 1100px;
+  }
+  #malwarelab .sticky-wrapper.stuck .peek {
+    margin-left: -780px;
+  }
+  #malwarelab.left.pushed .main.menu {
+    margin-left: -132px;
+  }
+}
+
+@media only screen and (min-width : 2300px) {
+  #malwarelab .container {
+    width: 1320px;
+  }
+  #malwarelab .sticky-wrapper.stuck .peek {
+    margin-left: -890px;
+  }
+}
+
+
+
+@media only screen and (max-width : 998px) {
+  #malwarelab.index .main.menu .container {
+    width: auto;
+    padding: 0% 4%;
+  }
+  #malwarelab.transition .malwarelabs {
+    width: 100%;
+  }
+  #malwarelab.transition .malwarelabs .pointing.below.label {
+    display: none;
+  }
+}
+@media only screen and (min-width : 998px) {
+  #malwarelab.index .main.menu .container {
+    width: auto;
+    padding: 0% 8%;
+  }
+  #malwarelab .malwarelabs {
+    margin-right: 400px;
+  }
+  #malwarelab .fixed.column,
+  #malwarelab .fixed.column .fixed {
+    float: right;
+    width: 300px;
+  }
+}
+@media only screen and (min-width : 1500px) {
+  #malwarelab.index .main.menu .container {
+    width: auto;
+    padding: 0% 13%;
+  }
+  #malwarelab .malwarelabs {
+    margin-right: 500px;
+  }
+  #malwarelab .fixed.column,
+  #malwarelab .fixed.column .fixed  {
+    float: right;
+    width: 400px;
+  }
+}
+@media only screen and (min-width : 1750px) {
+  #malwarelab.index .main.menu .container {
+    width: auto;
+    padding: 0% 18%;
+  }
+}
+@media only screen and (min-width : 2000px) {
+  #malwarelab.index .main.menu .container {
+    width: auto;
+    padding: 0% 23%;
+  }
+}

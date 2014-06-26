@@ -1,0 +1,266 @@
+@(projects: List[Project], todoTasks: List[Task])
+
+@main() {
+    <div class="segment">
+        <div class="container">
+            <div class="introduction">
+                <h1 class="ui dividing header">
+                    <b>Malware</b>Lab
+                </h1>
+                <div class="ui two column grid">
+                    <div class="column">
+                        <div class="ui icon message">
+                            <i class="bug icon"></i>
+                            <div class="content">
+                                <div class="header">
+                                    100
+                                </div>
+                                <b>Analyses</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui icon message">
+                            <i class="url icon"></i>
+                            <div class="content">
+                                <div class="header">
+                                    200
+                                </div>
+                                <b>Domains</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main container">
+        <div class="sticky-wrapper column">
+            <div class="peek">
+                <div class="ui inverted vertical menu">
+                    <a class="item active">Recent Analyses</a>
+                    <a class="item">Recent Domains</a>
+                </div>
+            </div>
+        </div>
+        <h2 class="ui dividing header" style="">Recent Analyses</h2>
+        <div class="malwarelab">
+            <table class="ui table segment" style="display: table;">
+                <thead>
+                    <tr><th>Name</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                    </tr></thead>
+                <tbody>
+                    <tr>
+                        <td>No Name Specified</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>No Name Specified</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr><tr>
+                    <td>No Name Specified</td>
+                    <td>Unknown</td>
+                    <td>None</td>
+                </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr><tr>
+                    <td>No Name Specified</td>
+                    <td>Unknown</td>
+                    <td>None</td>
+                </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr><tr>
+                    <td>No Name Specified</td>
+                    <td>Unknown</td>
+                    <td>None</td>
+                </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2 class="ui dividing header" style="">Recent Domains</h2>
+        <div class="malwarelab">
+            <table class="ui table segment" style="display: table;">
+                <thead>
+                    <tr><th>Name</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                    </tr></thead>
+                <tbody>
+                    <tr>
+                        <td>No Name Specified</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>No Name Specified</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr><tr>
+                    <td>No Name Specified</td>
+                    <td>Unknown</td>
+                    <td>None</td>
+                </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr><tr>
+                    <td>No Name Specified</td>
+                    <td>Unknown</td>
+                    <td>None</td>
+                </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr><tr>
+                    <td>No Name Specified</td>
+                    <td>Unknown</td>
+                    <td>None</td>
+                </tr>
+                    <tr class="positive">
+                        <td>Jimmy</td>
+                        <td><i class="icon checkmark"></i> Approved</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td>Jamie</td>
+                        <td>Unknown</td>
+                        <td class="negative"><i class="icon close"></i> Requires call</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Unknown</td>
+                        <td>None</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
