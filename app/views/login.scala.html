@@ -1,11 +1,12 @@
-@(form: Form[Application.Login])
+@(loginForm: Form[_])
 
-@main() {
+@main(Messages("playauthenticate.login.title"),"login") {
+
     <div class="segment">
         <div class="container">
             <div class="introduction">
                 <h1 class="ui dividing header">
-                    Login
+                    @Messages("malwarelab.login.title")
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <a href="#" class="ui basic labeled icon button">
@@ -15,60 +16,61 @@
             </div>
         </div>
     </div>
+
     <div class="main container">
         <div class="ui two column middle aligned relaxed grid basic segment">
             <div class="column">
-            @helper.form(routes.Application.authenticate) {
-                @if(flash.contains("success")) {
-                    <div class="ui form">
-                        <div class="ui message">
-                            <div class="header">Success! </div>
-                            <p>you have successfully logged out.</p>
-                        </div>
-                    </div>
-                }
                 <div class="ui error form segment">
-                    @if(form.hasGlobalErrors) {
-                        <div class="ui error message">
-                            <div class="header">Action Forbidden</div>
-                            <p>@form.globalError.message</p>
-                        </div>
+                    @helper.form(routes.Application.doLogin) {
+
+                        @if(flash.contains("error")) {
+                            <div class="ui error message">
+                                <div class="header">Action Forbidden</div>
+                                <p>@flash.get("error")</p>
+                            </div>
+                        }
+
+                        @if(flash.contains("message")) {
+                            <div class="ui success message">
+                            Successheader">Sign Up Success!</div>
+                                <p>@flash.get("message")</p>
+                            </div>
+                        }
+
+                        @*Email field*@
+                        @_formField(
+                            loginForm("email"),
+                            '_type -> "text",
+                            '_label -> "Email address",
+                            'icon -> "lock"
+                        )
+
+                        @*Password field*@
+                        @_formField(
+                            loginForm("password"),
+                            '_type -> "password",
+                            '_label -> "Password",
+                            'icon -> "mail"
+                        )
+
+                        <input type="submit" class="ui blue submit button" value="Login"><br/>
                     }
-                    <div class="field">
-                        <label>Email</label>
-                        <div class="ui left labeled icon input">
-                            <input type="email" name="email" placeholder="Email" value="@form("email").value">
-                            <i class="mail icon"></i>
-                            <div class="ui corner label">
-                                <i class="asterisk icon"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Password</label>
-                        <div class="ui left labeled icon input">
-                            <input type="password" name="password">
-                            <i class="lock icon"></i>
-                            <div class="ui corner label">
-                                <i class="asterisk icon"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="ui blue submit button">Login</button>
-                    @*<div type="submit" class="ui blue submit button">Login</div>*@
                 </div>
-            }
             </div>
+
             <div class="ui vertical divider">
                 OR
             </div>
+
             <div class="center aligned column">
-                <div class="huge green ui labeled icon button">
-                    <i class="signup icon"></i>
-                    Sign Up
-                </div>
+                <a href="@routes.Application.signup()">
+                    <div class="huge green ui labeled icon button">
+                        <i class="signup icon"></i>
+                        Sign Up
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-}
 
+}

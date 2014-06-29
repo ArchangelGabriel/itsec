@@ -1,0 +1,83 @@
+@(signupForm: Form[_])
+
+@main(Messages("malwarelab.signup.title"),"signup") {
+
+    <div class="segment">
+        <div class="container">
+            <div class="introduction">
+                <h1 class="ui dividing header">
+                @Messages("malwarelab.signup.title")
+                </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#" class="ui basic labeled icon button">
+                    Learn more about signing up
+                    <i class="help icon"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main container">
+        <div class="ui middle aligned two column stackable grid">
+            <div class="row">
+                <div class="column">
+                    <div class="ui vertical fluid">
+                        @helper.form(routes.Application.doSignup) {
+                            <div class="ui fluid form segment">
+
+                                @*Name field*@
+                                @_formField(
+                                    signupForm("name"),
+                                    'type -> "text",
+                                    '_label -> "Name",
+                                    'icon -> "user"
+                                )
+
+                                @*Email field*@
+                                @_formField(
+                                    signupForm("email"),
+                                    'type -> "text",
+                                    '_label -> "Email",
+                                    'icon -> "mail"
+                                )
+
+                                @*Password field*@
+                                @_formField(
+                                    signupForm("password"),
+                                    '_type -> "password",
+                                    '_label -> "Password",
+                                    'icon -> "lock"
+                                )
+
+                                @*Repeat password field*@
+                                @_formField(
+                                    signupForm("repeatPassword"),
+                                    '_type -> "password",
+                                    '_label -> "Repeat password",
+                                    'icon -> "lock"
+                                )
+
+                                <input type="submit" class="ui green submit button" value="@Messages("malwarelab.signup.now")">
+
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="ui vertical fluid page grid">
+                        <div class="ui huge buttons">
+                            <div class="ui button">One</div>
+                            <div class="or"></div>
+                            <div class="ui button">Two</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+}
+
+

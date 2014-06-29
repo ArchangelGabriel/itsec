@@ -1273,248 +1273,242 @@ body.progress .ui.progress .bar {
 }
 
 
-
 @media only screen and (max-width : 1725px) {
-  #malwarelab .container {
-    width: auto;
-    margin-right: 300px;
-    margin-left: 100px;
-  }
-  #malwarelab.index .container {
-    margin-left: 8em;
-    margin-right: 8em;
-  }
-  #malwarelab .sticky-wrapper.stuck .peek {
-    margin-right: 0px;
-    right: 101px;
-  }
-  #malwarelab.left.pushed .sticky-wrapper .peek {
-    padding-left: 275px;
-    margin-left: -275px;
-  }
-  #malwarelab.left.pushed .sticky-wrapper.stuck .peek {
-    margin-left: 0px;
-    padding-left: 275px;
-  }
+    #malwarelab .container {
+        width: auto;
+        margin-right: 300px;
+        margin-left: 100px;
+    }
+    #malwarelab.index .container {
+        margin-left: 8em;
+        margin-right: 8em;
+    }
+    #malwarelab .sticky-wrapper.stuck .peek {
+        margin-right: 0px;
+        right: 101px;
+    }
+    #malwarelab.left.pushed .sticky-wrapper .peek {
+        padding-left: 275px;
+        margin-left: -275px;
+    }
+    #malwarelab.left.pushed .sticky-wrapper.stuck .peek {
+        margin-left: 0px;
+        padding-left: 275px;
+    }
 }
 @media only screen and (max-width : 1500px) {
-  #malwarelab.index .icon.header .icon {
-    font-size: 3em;
-  }
+    #malwarelab.index .icon.header .icon {
+        font-size: 3em;
+    }
 }
 
 @media only screen and (max-width : 1050px) {
-  #malwarelab .fixed .section,
-  #malwarelab .fixed .title b {
-    display: none;
-  }
-  #malwarelab .stripe .header .code.icon {
-    display: none;
-  }
-  #malwarelab .fixed .container {
-    width: auto;
-    margin: 0px auto;
-  }
-  #malwarelab .attached.launch.button {
-    display: none;
-  }
-  #malwarelab .fixed .launch {
-    display: inline-block;
-  }
-  #malwarelab .sticky-wrapper {
-    display: none;
-  }
-  #malwarelab .container {
-    width: auto;
-    margin: 0% 30px 0px;
-  }
+    #malwarelab .fixed .dropdown .title,
+    #malwarelab .fixed .title b {
+        display: none;
+    }
+    #malwarelab .stripe .header .code.icon {
+        display: none;
+    }
+    #malwarelab .fixed .container {
+        width: auto;
+        margin: 0px auto;
+    }
+    #malwarelab .attached.launch.button {
+        display: none;
+    }
+    #malwarelab .fixed .launch {
+        display: inline-block;
+    }
+    #malwarelab .sticky-wrapper {
+        display: none;
+    }
+    #malwarelab .container {
+        width: auto;
+        margin: 0% 30px 0px;
+    }
 }
 @media only screen and (max-width : 780px) {
-  pre.console {
-    height: 150px;
-  }
-  #malwarelab.index .masthead {
-    text-align: center;
-    padding: 50px 0px 15px;
-  }
-  #malwarelab.index .masthead h1 {
-    font-size: 3em;
-  }
-  #malwarelab.index .masthead h1 .icon {
-    display: none;
-  }
-  #malwarelab.index .masthead .button {
-    font-size: 1.1em;
-    margin-bottom: 0.5em;
-  }
-  #malwarelab.index .masthead h2 {
-    font-size: 1.25em;
-    margin: 0em 0em 1em;
-  }
-  #malwarelab.index .masthead p {
-    font-size: 1.35em;
-  }
-  #malwarelab.index .container {
-    margin-left: 2em;
-    margin-right: 2em;
-  }
-  #malwarelab.index .icon.header .icon {
-    font-size: 3em;
-  }
-  #malwarelab .introduction {
-    display: block;
-  }
-  #malwarelab .advertisement {
-    display: block;
-    margin: 1em 0em;
-    padding: 0em;
-  }
-  #malwarelab #menu .hide.item {
-    display: block;
-  }
-  #malwarelab #menu .item > .icon {
-    font-size: 1em !important;
-  }
-  #malwarelab .inverted.advertisement .carbonad {
-    height: 109px;
-  }
-  #malwarelab .inverted.advertisement .carbonad-img {
-    margin-top: 0px;
-  }
-  #malwarelab #carbonads-container {
-    float: none;
-  }
-  #malwarelab .carbonad {
-    width: auto;
-  }
-  #malwarelab .carbonad-text,
-  #malwarelab .carbonad-tag {
-    float: none;
-    display: block;
-    text-align: left;
-    margin-left: 160px;
-    width: 170px;
-  }
+    pre.console {
+        height: 150px;
+    }
+    #malwarelab.index .masthead {
+        text-align: center;
+        padding: 50px 0px 15px;
+    }
+    #malwarelab.index .masthead h1 {
+        font-size: 3em;
+    }
+    #malwarelab.index .masthead h1 .icon {
+        display: none;
+    }
+    #malwarelab.index .masthead .button {
+        font-size: 1.1em;
+        margin-bottom: 0.5em;
+    }
+    #malwarelab.index .masthead h2 {
+        font-size: 1.25em;
+        margin: 0em 0em 1em;
+    }
+    #malwarelab.index .masthead p {
+        font-size: 1.35em;
+    }
+    #malwarelab.index .container {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    #malwarelab.index .icon.header .icon {
+        font-size: 3em;
+    }
+    #malwarelab .introduction {
+        display: block;
+    }
+    #malwarelab .advertisement {
+        display: block;
+        margin: 1em 0em;
+        padding: 0em;
+    }
+    #malwarelab #menu .hide.item {
+        display: block;
+    }
+    #malwarelab #menu .item > .icon {
+        font-size: 1em !important;
+    }
+    #malwarelab .inverted.advertisement .carbonad {
+        height: 109px;
+    }
+    #malwarelab .inverted.advertisement .carbonad-img {
+        margin-top: 0px;
+    }
+    #malwarelab #carbonads-container {
+        float: none;
+    }
+    #malwarelab .carbonad {
+        width: auto;
+    }
+    #malwarelab .carbonad-text,
+    #malwarelab .carbonad-tag {
+        float: none;
+        display: block;
+        text-align: left;
+        margin-left: 160px;
+        width: 170px;
+    }
 }
 
 
 @media only screen and (max-width : 600px) {
-  #malwarelab .icon.malwarelab .grid .column {
-    width: 33.33%;
-  }
+    #malwarelab .icon.malwarelab .grid .column {
+        width: 33.33%;
+    }
 }
 
 
 @media only screen and (max-width : 600px) {
-  #malwarelab .main.menu .borderless.item {
-    display: none;
-  }
-  #malwarelab .fixed .developer,
-  #malwarelab .fixed .designer,
-  #malwarelab .fixed .previous,
-  #malwarelab .fixed .next {
-    display: none;
-  }
-  #malwarelab > .tab.segment .tabular.menu {
-    display: none;
-  }
+    #malwarelab .main.menu .borderless.item {
+        display: none;
+    }
+    #malwarelab .fixed .developer,
+    #malwarelab .fixed .designer,
+    #malwarelab .fixed .previous,
+    #malwarelab .fixed .next {
+        display: none;
+    }
+    #malwarelab > .tab.segment .tabular.menu {
+        display: none;
+    }
 
-  #malwarelab > .tab.segment .vertical.menu {
-    display: block;
-  }
+    #malwarelab > .tab.segment .vertical.menu {
+        display: block;
+    }
 }
-@media only screen and (max-width : 450px) {
-  #malwarelab .main.menu .icon.item {
-    display: none;
-  }
-  #malwarelab .main.menu .github.item {
-    display: block;
-  }
-  #malwarelab .main.menu .github.item:before {
-    display: none;
-  }
-  #malwarelab .carbonad {
-    height: 135px;
-  }
-  #malwarelab .carbonad .carbonad-text {
-    width: 90px;
-  }
+@media only screen and (max-width : xpx) {
+    #malwarelab .main.menu .icon.item {
+        display: none;
+    }
+    #malwarelab .main.menu .github.item {
+        display: block;
+    }
+    #malwarelab .main.menu .github.item:before {
+        display: none;
+    }
+    #malwarelab .carbonad {
+        height: 135px;
+    }
+    #malwarelab .carbonad .carbonad-text {
+        width: 90px;
+    }
 }
 
 
 
 @media only screen and (min-width : 1725px) {
-  #malwarelab .container {
-    width: 1100px;
-  }
-  #malwarelab .sticky-wrapper.stuck .peek {
-    margin-left: -780px;
-  }
-  #malwarelab.left.pushed .main.menu {
-    margin-left: -132px;
-  }
+    #malwarelab .container {
+        width: 1100px;
+    }
+    #malwarelab .sticky-wrapper.stuck .peek {
+        margin-left: -780px;
+    }
+    #malwarelab.left.pushed .main.menu {
+        margin-left: -132px;
+    }
 }
 
 @media only screen and (min-width : 2300px) {
-  #malwarelab .container {
-    width: 1320px;
-  }
-  #malwarelab .sticky-wrapper.stuck .peek {
-    margin-left: -890px;
-  }
+    #malwarelab .container {
+        width: 1320px;
+    }
+    #malwarelab .sticky-wrapper.stuck .peek {
+        margin-left: -890px;
+    }
 }
 
 
 
 @media only screen and (max-width : 998px) {
-  #malwarelab.index .main.menu .container {
-    width: auto;
-    padding: 0% 4%;
-  }
-  #malwarelab.transition .malwarelabs {
-    width: 100%;
-  }
-  #malwarelab.transition .malwarelabs .pointing.below.label {
-    display: none;
-  }
+    #malwarelab.index .main.menu .container {
+        width: auto;
+        padding: 0% 4%;
+    }
+    #malwarelab.transition .malwarelabs {
+        width: 100%;
+    }
+    #malwarelab.transition .malwarelabs .pointing.below.label {
+        display: none;
+    }
 }
 @media only screen and (min-width : 998px) {
-  #malwarelab.index .main.menu .container {
-    width: auto;
-    padding: 0% 8%;
-  }
-  #malwarelab .malwarelabs {
-    margin-right: 400px;
-  }
-  #malwarelab .fixed.column,
-  #malwarelab .fixed.column .fixed {
-    float: right;
-    width: 300px;
-  }
+    #malwarelab.index .main.menu .container {
+        width: auto;
+        padding: 0% 8%;
+    }
+    #malwarelab .malwarelabs {
+        margin-right: 400px;
+    }
+    #malwarelab .fixed.column,
+    #malwarelab .fixed.column .fixed {
+        float: right;
+        width: 300px;
+    }
 }
 @media only screen and (min-width : 1500px) {
-  #malwarelab.index .main.menu .container {
-    width: auto;
-    padding: 0% 13%;
-  }
-  #malwarelab .malwarelabs {
-    margin-right: 500px;
-  }
-  #malwarelab .fixed.column,
-  #malwarelab .fixed.column .fixed  {
-    float: right;
-    width: 400px;
-  }
+    #malwarelab.index .main.menu .container {
+        width: auto;
+        padding: 0% 13%;
+    }
+    #malwarelab .malwarelabs {
+        margin-right: 500px;
+    }
+    #malwarelab .fixed.column,
+    #malwarelab .fixed.column .fixed  {
+        float: right;
+        width: 400px;
+    }
 }
-@media only screen and (min-width : 1750px) {
-  #malwarelab.index .main.menu .container {
-    width: auto;
-    padding: 0% 18%;
-  }
-}
+
 @media only screen and (min-width : 2000px) {
-  #malwarelab.index .main.menu .container {
-    width: auto;
-    padding: 0% 23%;
-  }
+    #malwarelab.index .main.menu .container {
+        width: auto;
+        padding: 0% 23%;
+    }
 }

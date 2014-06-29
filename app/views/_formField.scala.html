@@ -1,0 +1,22 @@
+@(field: play.api.data.Field, args: (Symbol,Any)*)(implicit lang: play.api.i18n.Lang)
+
+@import play.api.i18n._
+@import views.html.helper._
+@elements = @{ new FieldElements(field.id, field, null, args.toMap, lang) }
+
+<div class="field">
+    <label for="@field.name">@elements.args.get('_label)</label>
+    <div class="ui left labeled icon input @("error".when(field.hasErrors))">
+        <input type="@elements.args.get('_type)" id="@field.id" name="@field.name" placeholder="@elements.args.get('_label)" value="@field.value">
+        <i class="@elements.args.get('icon) icon"></i>
+        <div class="ui corner label">
+            <i class="asterisk icon"></i>
+        </div>
+
+        @if(field.hasErrors) {
+            <div class="ui red pointing above ui label">
+                @elements.errors(elements.lang).mkString(", ")
+            </div>
+        }
+    </div>
+</div>

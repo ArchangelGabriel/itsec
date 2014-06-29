@@ -1,6 +1,6 @@
-@(projects: List[Project], todoTasks: List[Task])
 
-@main() {
+@main(Messages("malwarelab.index.title")) {
+
     <div class="segment">
         <div class="container">
             <div class="introduction">
@@ -34,6 +34,7 @@
             </div>
         </div>
     </div>
+
     <div class="main container">
         <div class="sticky-wrapper column">
             <div class="peek">
@@ -262,5 +263,5 @@
             </table>
         </div>
     </div>
-}
 
+}
