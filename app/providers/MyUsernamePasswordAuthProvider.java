@@ -192,7 +192,7 @@ public class MyUsernamePasswordAuthProvider extends UsernamePasswordAuthProvider
 		return new MyLoginUsernamePasswordAuthUser(login.getPassword(),
 				login.getEmail());
 	}
-	
+
 
 	@Override
 	protected MyLoginUsernamePasswordAuthUser transformAuthUser(final MyUsernamePasswordAuthUser authUser, final Context context) {
@@ -207,9 +207,8 @@ public class MyUsernamePasswordAuthProvider extends UsernamePasswordAuthProvider
 
 	@Override
 	protected String onLoginUserNotFound(final Context context) {
-		context.flash()
-				.put(controllers.Application.FLASH_ERROR_KEY,
-						Messages.get("playauthenticate.password.login.unknown_user_or_pw"));
+		context.flash().put(controllers.Application.FLASH_ERROR_KEY,
+                Messages.get("malwarelab.password.login.unknown_user_or_pw"));
 		return super.onLoginUserNotFound(context);
 	}
 
@@ -260,7 +259,7 @@ public class MyUsernamePasswordAuthProvider extends UsernamePasswordAuthProvider
 
 	protected String getPasswordResetMailingSubject(final User user,
 			final Context ctx) {
-		return Messages.get("playauthenticate.password.reset_email.subject");
+		return Messages.get("malwarelab.password.reset_email.subject");
 	}
 
 	protected Body getPasswordResetMailingBody(final String token,
@@ -298,7 +297,7 @@ public class MyUsernamePasswordAuthProvider extends UsernamePasswordAuthProvider
 
 	protected String getVerifyEmailMailingSubjectAfterSignup(final User user,
 			final Context ctx) {
-		return Messages.get("playauthenticate.password.verify_email.subject");
+		return Messages.get("malwarelab.password.verify_email.subject");
 	}
 
 	protected String getEmailTemplate(final String template,

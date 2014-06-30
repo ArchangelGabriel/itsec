@@ -1422,21 +1422,9 @@ body.progress .ui.progress .bar {
         display: block;
     }
 }
-@media only screen and (max-width : xpx) {
-    #malwarelab .main.menu .icon.item {
-        display: none;
-    }
-    #malwarelab .main.menu .github.item {
-        display: block;
-    }
-    #malwarelab .main.menu .github.item:before {
-        display: none;
-    }
-    #malwarelab .carbonad {
-        height: 135px;
-    }
-    #malwarelab .carbonad .carbonad-text {
-        width: 90px;
+@media only screen and (max-width : 550px) {
+    #malwarelab .main.menu .container .item span.title {
+        display:none;
     }
 }
 

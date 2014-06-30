@@ -1,6 +1,6 @@
 @(loginForm: Form[_])
 
-@main(Messages("playauthenticate.login.title"),"login") {
+@main(Messages("malwarelab.login.title"),"login") {
 
     <div class="segment">
         <div class="container">
@@ -18,59 +18,79 @@
     </div>
 
     <div class="main container">
-        <div class="ui two column middle aligned relaxed grid basic segment">
-            <div class="column">
-                <div class="ui error form segment">
-                    @helper.form(routes.Application.doLogin) {
 
-                        @if(flash.contains("error")) {
-                            <div class="ui error message">
-                                <div class="header">Action Forbidden</div>
-                                <p>@flash.get("error")</p>
+        <div class="ui middle aligned two column stackable grid">
+            <div class="row">
+                <div class="column">
+                    <div class="ui vertical fluid">
+
+                        <div class="ui error form segment">
+
+                            <div class="field">
+                                <label><b>Login with</b></label>
+                                @_providerPartial(skipCurrent=false)
                             </div>
-                        }
 
-                        @if(flash.contains("message")) {
-                            <div class="ui success message">
-                            Successheader">Sign Up Success!</div>
-                                <p>@flash.get("message")</p>
+                            <div class="ui horizontal divider">
+                                Or
                             </div>
-                        }
 
-                        @*Email field*@
-                        @_formField(
-                            loginForm("email"),
-                            '_type -> "text",
-                            '_label -> "Email address",
-                            'icon -> "lock"
-                        )
+                            @helper.form(routes.Application.doLogin()) {
 
-                        @*Password field*@
-                        @_formField(
-                            loginForm("password"),
-                            '_type -> "password",
-                            '_label -> "Password",
-                            'icon -> "mail"
-                        )
 
-                        <input type="submit" class="ui blue submit button" value="Login"><br/>
-                    }
+                                @if(flash.contains("error")) {
+                                    <div class="ui error message">
+                                        <div class="header">Action Forbidden</div>
+                                        <p>@flash.get("error")</p>
+                                    </div>
+                                }
+
+                                @if(flash.contains("message")) {
+                                    <div class="ui success message">
+                                        Successheader">Sign Up Success!</div>
+                                        <p>@flash.get("message")</p>
+                                    </div>
+                                }
+
+                                @*Email field*@
+                                @_formField(
+                                    loginForm("email"),
+                                    '_type -> "text",
+                                    '_label -> "Email address",
+                                    'icon -> "lock"
+                                )
+
+                                @*Password field*@
+                                @_formField(
+                                    loginForm("password"),
+                                    '_type -> "password",
+                                    '_label -> "Password",
+                                    'icon -> "mail"
+                                )
+
+                                <input type="submit" class="ui blue submit button" value="@Messages("malwarelab.login.now")">
+                                <a href="@routes.Signup.forgotPassword()">@Messages("malwarelab.login.forgot.password")</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="ui message">
+                        <div class="ui small header">
+                            Or sign up here:
+                        </div>
+                        <a href="@routes.Application.signup()">
+                            <div class="large green ui labeled icon button">
+                                <i class="signup icon"></i>
+                                Sign Up
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-            <div class="ui vertical divider">
-                OR
-            </div>
-
-            <div class="center aligned column">
-                <a href="@routes.Application.signup()">
-                    <div class="huge green ui labeled icon button">
-                        <i class="signup icon"></i>
-                        Sign Up
-                    </div>
-                </a>
-            </div>
         </div>
+
     </div>
 
 }

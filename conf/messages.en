@@ -61,7 +61,7 @@ malwarelab.login.password.repeat=Repeat chosen password
 malwarelab.login.title=Login
 malwarelab.login.password.placeholder=Password
 malwarelab.login.now=Login now
-malwarelab.login.forgot.password=Forgot your password?
+malwarelab.login.forgot.password=Forgot password?
 malwarelab.login.oauth=or log in using one of the following providers:
 
 malwarelab.signup.title=Signup

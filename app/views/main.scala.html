@@ -43,8 +43,9 @@
         <div class="ui fixed transparent inverted main menu">
             <div class="container">
                 <a class="icon item @("active".when(nav == ""))" href="@routes.Application.index()"><b>MalwareLab</b></a>
-                <a class="icon item" href="#"><i class="bug icon"></i>Analyses</a>
-                <a class="icon item" href="#"><i class="up icon"></i>Submit</a>
+                <a class="icon item" href="#"><i class="bug icon"></i><span class="title">Analyses</span></a>
+                <a class="icon item" href="#"><i class="search icon"></i><span class="title">Search</span></a>
+                <a class="icon item" href="#"><i class="up icon"></i><span class="title">Submit</span></a>
                 <div class="right menu">
                 @subjectPresentOr() {
                     @defining(Application.getLocalUser(session())) { user =>
@@ -59,7 +60,7 @@
                     }
                 } {
                     <a class="icon item @("disabled".when(nav == "login"))" href="@routes.Application.login()">
-                        <i class="user icon"></i>Login
+                        <i class="user icon"></i>Sign in
                     </a>
                 }
                 </div>
