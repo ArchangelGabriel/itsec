@@ -136,8 +136,7 @@ public class User extends Model implements Subject {
         // user.permissions.add(UserPermission.findByValue("printers.edit"));
         user.active = true;
         user.lastLogin = new Date();
-        user.linkedAccounts = Collections.singletonList(LinkedAccount
-                .create(authUser));
+        user.linkedAccounts = Collections.singletonList(LinkedAccount.create(authUser));
 
         if (authUser instanceof EmailIdentity) {
             final EmailIdentity identity = (EmailIdentity) authUser;
@@ -175,8 +174,7 @@ public class User extends Model implements Subject {
     }
 
     public static void merge(final AuthUser oldUser, final AuthUser newUser) {
-        User.findByAuthUserIdentity(oldUser).merge(
-                User.findByAuthUserIdentity(newUser));
+        User.findByAuthUserIdentity(oldUser).merge(User.findByAuthUserIdentity(newUser));
     }
 
     public Set<String> getProviders() {
@@ -220,16 +218,14 @@ public class User extends Model implements Subject {
         TokenAction.deleteByUser(unverified, Type.EMAIL_VERIFICATION);
     }
 
-    public void changePassword(final UsernamePasswordAuthUser authUser,
-                               final boolean create) {
+    public void changePassword(final UsernamePasswordAuthUser authUser, final boolean create) {
         LinkedAccount a = this.getAccountByProvider(authUser.getProvider());
         if (a == null) {
             if (create) {
                 a = LinkedAccount.create(authUser);
                 a.user = this;
             } else {
-                throw new RuntimeException(
-                        "Account not enabled for password usage");
+                throw new RuntimeException("Account not enabled for password usage");
             }
         }
         a.providerUserId = authUser.getHashedPassword();

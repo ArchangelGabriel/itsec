@@ -23,17 +23,7 @@
             <div class="row">
                 <div class="column">
                     <div class="ui vertical fluid">
-
                         <div class="ui error form segment">
-
-                            <div class="field">
-                                <label><b>Login with</b></label>
-                                @_providerPartial(skipCurrent=false)
-                            </div>
-
-                            <div class="ui horizontal divider">
-                                Or
-                            </div>
 
                             @helper.form(routes.Application.doLogin()) {
 
@@ -75,19 +65,29 @@
                     </div>
                 </div>
 
-                <div class="column">
-                    <div class="ui message">
-                        <div class="ui small header">
-                            Or sign up here:
-                        </div>
-                        <a href="@routes.Application.signup()">
-                            <div class="large green ui labeled icon button">
+                <div class="ui column page grid">
+                    <div class="column">
+                        <div class="ui labeled grey vertical fluid icon menu">
+
+                            @*Sign up button*@
+                            <a class="item" href="@routes.Application.signup()">
                                 <i class="signup icon"></i>
-                                Sign Up
-                            </div>
-                        </a>
+                                Sign up
+                            </a>
+
+                            @*Real providers*@
+                            @_providerPartial(skipCurrent=false)
+
+                            @*Hard coded *@
+                            <a class="item">
+                                <i class="twitter icon"></i>
+                                Login with twitter
+                            </a>
+                        </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
 

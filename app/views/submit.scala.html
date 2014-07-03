@@ -1,0 +1,34 @@
+@main(Messages("Submit (WIP)"),"submit") {
+
+    <div class="segment">
+        <div class="container">
+            <div class="introduction">
+                <h1 class="ui dividing header">
+                @Messages("Submit (WIP)")
+                </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#" class="ui basic labeled icon button">
+                    Learn more about submitting files
+                    <i class="help icon"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main container">
+        <div class="ui middle aligned column stackable grid">
+            <div class="row">
+                <div class="column">
+                    @helper.form(action = routes.Application.upload, 'enctype -> "multipart/form-data") {
+                        <input type="file" name="sample">
+                        <p>
+                            <input type="submit">
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

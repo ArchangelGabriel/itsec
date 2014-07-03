@@ -10,20 +10,14 @@ window.location.href = url + "?p=" + encodeURIComponent(openid);
 }
 }
 </script>
-<div class="ui horizontal list providers">
-    @forProviders(skipCurrent) { p =>
-        <div class="item">
-            <div class="content">
-                @if(p.getKey() == "openid") {
-                    <a href="javascript:void(0);" onclick="askOpenID('@p.getUrl()');">
-                    } else {
-                    <a href="@p.getUrl()">
-                }
-                <div class="ui @p.getKey() button">
-                    <i class="@p.getKey() icon"></i>
-                    @p.getKey()
-                </div>
-            </div>
-        </div>
+
+@forProviders(skipCurrent) { p =>
+    @if(p.getKey() == "openid") {
+        <a class="item" href="javascript:void(0);" onclick="askOpenID('@p.getUrl()');">
+    } else {
+        <a class="item" href="@p.getUrl()">
     }
-</div>
+            <i class="facebook icon"></i>
+            Login with facebook
+        </a>
+}

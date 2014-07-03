@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,6 +20,7 @@ import views.html.*;
 import be.objectify.deadbolt.java.actions.Group;
 import be.objectify.deadbolt.java.actions.Restrict;
 
+
 import com.feth.play.module.pa.PlayAuthenticate;
 import com.feth.play.module.pa.providers.password.UsernamePasswordAuthProvider;
 import com.feth.play.module.pa.user.AuthUser;
@@ -32,6 +34,32 @@ public class Application extends Controller {
     public static Result index() {
         return ok(index.render());
     }
+
+
+
+    public static Result submit() {
+        return ok(submit.render());
+    }
+
+    public static Result search() {
+        return ok(search.render());
+    }
+
+    public static Result upload() {
+        Http.MultipartFormData body = request().body().asMultipartFormData();
+        Http.MultipartFormData.FilePart sample = body.getFile("sample");
+        if (sample != null) {
+//            String fileName = picture.getFilename();
+//            String contentType = picture.getContentType();
+//            File file = picture.getFile();
+            return ok("File uploaded");
+        } else {
+            flash("error", "Missing file");
+            return redirect(routes.Application.index());
+        }
+    }
+
+
 
     public static User getLocalUser(final Session session) {
         final AuthUser currentAuthUser = PlayAuthenticate.getUser(session);
