@@ -5,7 +5,7 @@ import be.objectify.deadbolt.java.actions.Restrict;
 import be.objectify.deadbolt.java.actions.SubjectPresent;
 import com.feth.play.module.pa.PlayAuthenticate;
 import com.feth.play.module.pa.user.AuthUser;
-import models.User;
+import models.mysql.User;
 import play.data.Form;
 import play.data.format.Formats.NonEmpty;
 import play.data.validation.Constraints.MinLength;

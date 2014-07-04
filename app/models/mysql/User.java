@@ -1,4 +1,4 @@
-package models;
+package models.mysql;
 
 import be.objectify.deadbolt.core.models.Permission;
 import be.objectify.deadbolt.core.models.Role;
@@ -11,7 +11,7 @@ import com.feth.play.module.pa.user.AuthUserIdentity;
 import com.feth.play.module.pa.user.EmailIdentity;
 import com.feth.play.module.pa.user.NameIdentity;
 import com.feth.play.module.pa.user.FirstLastNameIdentity;
-import models.TokenAction.Type;
+import models.mysql.TokenAction.Type;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
@@ -77,8 +77,7 @@ public class User extends Model implements Subject {
         return permissions;
     }
 
-    public static boolean existsByAuthUserIdentity(
-            final AuthUserIdentity identity) {
+    public static boolean existsByAuthUserIdentity(final AuthUserIdentity identity) {
         final ExpressionList<User> exp;
         if (identity instanceof UsernamePasswordAuthUser) {
             exp = getUsernamePasswordAuthUserFind((UsernamePasswordAuthUser) identity);
@@ -111,8 +110,7 @@ public class User extends Model implements Subject {
         return getUsernamePasswordAuthUserFind(identity).findUnique();
     }
 
-    private static ExpressionList<User> getUsernamePasswordAuthUserFind(
-            final UsernamePasswordAuthUser identity) {
+    private static ExpressionList<User> getUsernamePasswordAuthUserFind(final UsernamePasswordAuthUser identity) {
         return getEmailUserFind(identity.getEmail()).eq(
                 "linkedAccounts.providerKey", identity.getProvider());
     }

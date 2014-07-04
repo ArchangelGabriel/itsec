@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-import models.SecurityRole;
+import models.mysql.SecurityRole;
 
 import com.feth.play.module.pa.PlayAuthenticate;
 import com.feth.play.module.pa.PlayAuthenticate.Resolver;

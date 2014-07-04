@@ -3,7 +3,7 @@ package service;
 import com.feth.play.module.pa.service.UserServicePlugin;
 import com.feth.play.module.pa.user.AuthUser;
 import com.feth.play.module.pa.user.AuthUserIdentity;
-import models.User;
+import models.mysql.User;
 import play.Application;
 
 public class MyUserServicePlugin extends UserServicePlugin {

@@ -1,0 +1,16 @@
+@(productForm: Form[models.h2.Product])
+@import helper._
+@import helper.twitterBootstrap
+
+@main("Product form") {
+    <h1>Product Form</h1>
+    @helper.form(action = routes.Learning.save()) {
+        <fieldset>
+            <legend>Product (@productForm("name").valueOr("New"))</legend>
+            @helper.inputText(productForm("ean"))
+            @helper.inputText(productForm("name"))
+            @helper.textarea(productForm("description"))
+        </fieldset>
+        <input type="submit" class="btn primary">
+    }
+}

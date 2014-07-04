@@ -1,4 +1,4 @@
-package models;
+package models.mysql;
 
 import be.objectify.deadbolt.core.models.Permission;
 import play.db.ebean.Model;

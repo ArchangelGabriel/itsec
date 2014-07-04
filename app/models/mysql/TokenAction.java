@@ -1,4 +1,4 @@
-package models;
+package models.mysql;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.QueryIterator;

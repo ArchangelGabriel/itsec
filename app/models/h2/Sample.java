@@ -1,4 +1,4 @@
-package models;
+package models.h2;
 
 import play.db.ebean.Model;
 

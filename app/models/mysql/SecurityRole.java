@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package models;
+package models.mysql;
 
 import be.objectify.deadbolt.core.models.Role;
 import play.db.ebean.Model;

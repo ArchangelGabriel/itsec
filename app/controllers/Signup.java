@@ -1,9 +1,9 @@
 package controllers;
 
 import com.feth.play.module.pa.PlayAuthenticate;
-import models.TokenAction;
-import models.TokenAction.Type;
-import models.User;
+import models.mysql.TokenAction;
+import models.mysql.TokenAction.Type;
+import models.mysql.User;
 import play.data.Form;
 import play.i18n.Messages;
 import play.mvc.Controller;

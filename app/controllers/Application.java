@@ -1,15 +1,17 @@
 package controllers;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
-import models.User;
-import play.Logger;
+import models.h2.Product;
+import models.h2.StockItem;
+import models.mysql.User;
+import models.h2.Warehouse;
 import play.Routes;
 import play.data.Form;
 import play.mvc.*;
-import play.mvc.Http.Response;
 import play.mvc.Http.Session;
 import play.mvc.Result;
 import providers.MyUsernamePasswordAuthProvider;
@@ -25,16 +27,42 @@ import com.feth.play.module.pa.PlayAuthenticate;
 import com.feth.play.module.pa.providers.password.UsernamePasswordAuthProvider;
 import com.feth.play.module.pa.user.AuthUser;
 
+import play.libs.F.Function;
+import play.libs.WS;
+
+import static java.lang.String.format;
+
 public class Application extends Controller {
 
     public static final String FLASH_MESSAGE_KEY = "message";
     public static final String FLASH_ERROR_KEY = "error";
     public static final String USER_ROLE = "user";
 
-    public static Result index() {
-        return ok(index.render());
-    }
+//    public static Result index() {
+//        return ok(index.render());
+//    }
 
+    public static Result index() {
+        Warehouse warehouse = new Warehouse();
+        warehouse.name = "My Warehouse";
+
+        Product product = new Product();
+        product.name = "Stainless steel paperclips, small, 1000pcs";
+        product.ean = 1234L;
+        product.description = "1000 blue paperclips.";
+
+        StockItem item = new StockItem();
+        item.quantity = 15L;
+        item.product = product;
+        item.warehouse = warehouse;
+        warehouse.stock.add(item);
+        List<String> output = new LinkedList<String>();
+
+        output.add(format("My warehouse is called '%s'", warehouse));
+        output.add(format("It contains %d %s", warehouse.stock.size(), warehouse.stock.size() == 1 ? "item" : "items"));
+        output.add(format("The first is: %s", warehouse.stock.get(0)));
+        return ok(output.toString());
+    }
 
 
     public static Result submit() {
@@ -57,6 +85,18 @@ public class Application extends Controller {
             flash("error", "Missing file");
             return redirect(routes.Application.index());
         }
+    }
+
+    public static Result doSubmit() {
+        return async(
+                WS.url("http://192.168.251.139:8090/tasks/list").get().map(
+                        new Function<WS.Response, Result>() {
+                            public Result apply(WS.Response response) {
+                                return ok("Response: " + response.asJson());
+                            }
+                        }
+                )
+        );
     }
 
 
@@ -100,16 +140,12 @@ public class Application extends Controller {
     }
 
     public static Result jsRoutes() {
-        return ok(
-                Routes.javascriptRouter("jsRoutes",
-                        controllers.routes.javascript.Signup.forgotPassword()))
-                .as("text/javascript");
+        return ok(Routes.javascriptRouter("jsRoutes", controllers.routes.javascript.Signup.forgotPassword())).as("text/javascript");
     }
 
     public static Result doSignup() {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-        final Form<MySignup> filledForm = MyUsernamePasswordAuthProvider.SIGNUP_FORM
-                .bindFromRequest();
+        final Form<MySignup> filledForm = MyUsernamePasswordAuthProvider.SIGNUP_FORM.bindFromRequest();
         if (filledForm.hasErrors()) {
             // User did not fill everything properly
             return badRequest(signup.render(filledForm));

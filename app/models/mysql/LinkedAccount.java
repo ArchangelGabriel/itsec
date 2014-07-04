@@ -1,4 +1,4 @@
-package models;
+package models.mysql;
 
 import com.feth.play.module.pa.user.AuthUser;
 import play.db.ebean.Model;

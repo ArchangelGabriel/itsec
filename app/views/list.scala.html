@@ -1,0 +1,30 @@
+@(products: Set[models.h2.Product])
+
+@main("Products catalogue") {
+    @if(flash.containsKey("success")) {
+        <div class="ui message success">
+            @flash.get("success")
+        </div>
+    }
+    @if(flash.containsKey("error")) {
+        <div class="ui message error">
+        @flash.get("error")
+        </div>
+    }
+
+    <h1>All products</h1>
+    <dl>
+        @for(product <- products) {
+            <dt>
+                <a href="@routes.Learning.show(product.ean)">
+                    @product.ean - @product.name
+                </a>
+            </dt>
+            <dd>@product.description</dd>
+        }
+    </dl>
+
+    <a href="@routes.Learning.showBlank()" class="button">
+        <i class="plus icon"></i> New product
+    </a>
+}

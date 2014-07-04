@@ -4,10 +4,18 @@
 
 # Home page
 GET         /                                      controllers.Application.index
+
+GET         /products                              controllers.Learning.list()
+GET         /products/new                          controllers.Learning.showBlank()
+GET         /products/:ean                         controllers.Learning.show(ean: Long)
+POST        /products                              controllers.Learning.save()
+
+
 GET         /submit                                controllers.Application.submit
 GET         /search                                controllers.Application.search
 POST        /upload                                controllers.Application.upload
 
+GET         /dosubmit                              controllers.Application.doSubmit
 
 GET         /restricted                            controllers.Application.restricted
 GET         /assets/javascript/routes.js           controllers.Application.jsRoutes

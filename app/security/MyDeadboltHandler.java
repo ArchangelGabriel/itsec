@@ -1,6 +1,6 @@
 package security;
 
-import models.User;
+import models.mysql.User;
 import play.libs.F;
 import play.mvc.Http;
 import play.mvc.SimpleResult;
