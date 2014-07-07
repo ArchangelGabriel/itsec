@@ -1,12 +1,16 @@
 package controllers;
 
 import models.h2.Product;
+import models.h2.StockItem;
+import org.apache.commons.lang3.StringUtils;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.learn;
 import views.html.list;
 import views.html.show;
 
+import java.util.List;
 import java.util.Set;
 
 import static java.lang.String.format;
@@ -17,10 +21,25 @@ public class Learning extends Controller {
 
     private static final Form<Product> productForm = form(Product.class);
 
-    public static Result list() {
-        Set<Product> products = Product.findAll();
-        return ok(list.render(products));
+    public static Result list(Long warehouseId) {
+        List<StockItem> items = StockItem.find()
+                .where()
+                .eq("warehouse_id", warehouseId)
+                .orderBy("quantity desc")
+                .setMaxRows(3)
+                .findList();
+
+        if(items != null) {
+//            return ok(StringUtils.join(items, "\n"));
+            if (request().accepts("text/plain")) {
+                return ok(StringUtils.join(items, "\n"));
+            }
+            return ok(learn.render(items));
+        } else {
+            return notFound("No warehouse with id " + warehouseId);
+        }
     }
+
     public static Result showBlank() {
         return ok(show.render(productForm));
     }
@@ -43,7 +62,7 @@ public class Learning extends Controller {
         Product product = boundForm.get();
         Product.add(product);
         flash("success", format("Successfully added product %s", product));
-        return redirect(routes.Learning.list());
+        return ok("YES");
     }
 
 }

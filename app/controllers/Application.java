@@ -1,16 +1,32 @@
 package controllers;
 
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
-import java.util.List;
+
+import com.avaje.ebean.Ebean;
+import com.fasterxml.jackson.databind.JsonNode;
+
+import com.ning.http.client.FluentCaseInsensitiveStringsMap;
+import com.ning.http.multipart.FilePart;
+import com.ning.http.multipart.MultipartRequestEntity;
+import com.ning.http.multipart.Part;
 
 import models.h2.Product;
 import models.h2.StockItem;
 import models.mysql.User;
 import models.h2.Warehouse;
+import org.apache.commons.lang.StringUtils;
+import play.Logger;
 import play.Routes;
 import play.data.Form;
+import play.libs.F;
 import play.mvc.*;
 import play.mvc.Http.Session;
 import play.mvc.Result;
@@ -18,6 +34,7 @@ import providers.MyUsernamePasswordAuthProvider;
 import providers.MyUsernamePasswordAuthProvider.MyLogin;
 import providers.MyUsernamePasswordAuthProvider.MySignup;
 
+import scala.Int;
 import views.html.*;
 import be.objectify.deadbolt.java.actions.Group;
 import be.objectify.deadbolt.java.actions.Restrict;
@@ -27,10 +44,11 @@ import com.feth.play.module.pa.PlayAuthenticate;
 import com.feth.play.module.pa.providers.password.UsernamePasswordAuthProvider;
 import com.feth.play.module.pa.user.AuthUser;
 
-import play.libs.F.Function;
 import play.libs.WS;
 
-import static java.lang.String.format;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.util.List;
 
 public class Application extends Controller {
 
@@ -38,32 +56,9 @@ public class Application extends Controller {
     public static final String FLASH_ERROR_KEY = "error";
     public static final String USER_ROLE = "user";
 
-//    public static Result index() {
-//        return ok(index.render());
-//    }
-
     public static Result index() {
-        Warehouse warehouse = new Warehouse();
-        warehouse.name = "My Warehouse";
-
-        Product product = new Product();
-        product.name = "Stainless steel paperclips, small, 1000pcs";
-        product.ean = 1234L;
-        product.description = "1000 blue paperclips.";
-
-        StockItem item = new StockItem();
-        item.quantity = 15L;
-        item.product = product;
-        item.warehouse = warehouse;
-        warehouse.stock.add(item);
-        List<String> output = new LinkedList<String>();
-
-        output.add(format("My warehouse is called '%s'", warehouse));
-        output.add(format("It contains %d %s", warehouse.stock.size(), warehouse.stock.size() == 1 ? "item" : "items"));
-        output.add(format("The first is: %s", warehouse.stock.get(0)));
-        return ok(output.toString());
+        return ok(index.render());
     }
-
 
     public static Result submit() {
         return ok(submit.render());
@@ -73,24 +68,51 @@ public class Application extends Controller {
         return ok(search.render());
     }
 
-    public static Result upload() {
+    public static Result upload() throws IOException {
         Http.MultipartFormData body = request().body().asMultipartFormData();
         Http.MultipartFormData.FilePart sample = body.getFile("sample");
-        if (sample != null) {
-//            String fileName = picture.getFilename();
-//            String contentType = picture.getContentType();
-//            File file = picture.getFile();
-            return ok("File uploaded");
+        if (sample.getFile() != null) {
+//            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+//
+//            // Build up the Multiparts
+//            List<Part> parts = new ArrayList<Part>();
+//            parts.add(new FilePart("file", new File("filename")));
+//            Part[] partsA = parts.toArray(new Part[parts.size()]);
+//
+//            // Add it to the MultipartRequestEntity
+//            MultipartRequestEntity reqE = new MultipartRequestEntity(partsA, null);
+//            reqE.writeRequest(bos);
+//            InputStream reqIS = new ByteArrayInputStream(bos.toByteArray());
+//            WS.WSRequestHolder req = WS.url("http://192.168.251.145:8090/tasks/create/file")
+//                    .setContentType(reqE.getContentType());
+//
+//            req.post(reqIS);
+
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+// Build up the Multiparts
+            List<Part> parts = new ArrayList<>();
+            parts.add(new FilePart("file", sample.getFile()));
+            Part[] partsA = parts.toArray(new Part[parts.size()]);
+
+// Add it to the MultipartRequestEntity
+            MultipartRequestEntity reqE = new MultipartRequestEntity(partsA, new FluentCaseInsensitiveStringsMap());
+            reqE.writeRequest(bos);
+            InputStream reqIS = new ByteArrayInputStream(bos.toByteArray());
+            WS.WSRequestHolder req = WS.url("http://192.168.251.145:8090/tasks/create/file")
+                    .setContentType(reqE.getContentType());
+            req.post(reqIS);
+
+            return ok("Whatever");
         } else {
-            flash("error", "Missing file");
-            return redirect(routes.Application.index());
+            return ok("No have file");
         }
     }
 
     public static Result doSubmit() {
         return async(
                 WS.url("http://192.168.251.139:8090/tasks/list").get().map(
-                        new Function<WS.Response, Result>() {
+                        new F.Function<WS.Response, Result>() {
                             public Result apply(WS.Response response) {
                                 return ok("Response: " + response.asJson());
                             }

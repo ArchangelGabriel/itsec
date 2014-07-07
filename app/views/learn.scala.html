@@ -1,5 +1,12 @@
-@(message: String)
+@(stockItems: List[models.h2.StockItem])
 
-<div>
-    @message
-</div>
+<!DOCTYPE html>
+<html>
+    <body>
+        <ul>
+            @for(stockItem <- stockItems) {
+                <li>@stockItem.product.name (@stockItem.quantity)</li>
+            }
+        </ul>
+    </body>
+</html>

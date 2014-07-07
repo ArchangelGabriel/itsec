@@ -1,14 +1,21 @@
 package models.h2;
 
+import com.avaje.ebean.Ebean;
 import play.db.ebean.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 public class Product extends Model{
+
+    public void save() {
+        Ebean.getServer("secondary").save(this);
+    }
 
     @Id
     public Long id;
@@ -16,6 +23,9 @@ public class Product extends Model{
     public Long ean;
     public String name;
     public String description;
+
+    @OneToMany(mappedBy="product")
+    public List<StockItem> stockItems;
 
     public Product() {
     }
@@ -28,6 +38,10 @@ public class Product extends Model{
 
     public String toString() {
         return String.format("%s - %s", ean, name);
+    }
+
+    public static Finder<Long, Product> find() {
+        return new Finder<Long, Product>("secondary", Long.class, Product.class);
     }
 
     public static Set<Product> findAll() {

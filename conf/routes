@@ -5,10 +5,10 @@
 # Home page
 GET         /                                      controllers.Application.index
 
-GET         /products                              controllers.Learning.list()
 GET         /products/new                          controllers.Learning.showBlank()
 GET         /products/:ean                         controllers.Learning.show(ean: Long)
 POST        /products                              controllers.Learning.save()
+GET         /:warehouseId/products                 controllers.Learning.list(warehouseId: Long)
 
 
 GET         /submit                                controllers.Application.submit
