@@ -13,6 +13,7 @@ GET         /:warehouseId/products                 controllers.Learning.list(war
 
 GET         /submit                                controllers.Application.submit
 GET         /search                                controllers.Application.search
+GET         /analyses                              controllers.Application.analyses
 POST        /upload                                controllers.Application.upload
 
 GET         /dosubmit                              controllers.Application.doSubmit

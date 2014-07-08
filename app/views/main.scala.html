@@ -43,7 +43,7 @@
         <div class="ui fixed transparent inverted main menu">
             <div class="container">
                 <a class="icon item @("active".when(nav == ""))" href="@routes.Application.index()"><b>MalwareLab</b></a>
-                <a class="icon item @("active".when(nav == "analyses"))" href="#"><i class="bug icon"></i><span class="title">Analyses</span></a>
+                <a class="icon item @("active".when(nav == "analyses"))" href="@routes.Application.analyses()"><i class="bug icon"></i><span class="title">Analyses</span></a>
                 <a class="icon item @("active".when(nav == "search"))" href="@routes.Application.search()"><i class="search icon"></i><span class="title">Search</span></a>
                 <a class="icon item @("active".when(nav == "submit"))" href="@routes.Application.submit()"><i class="up icon"></i><span class="title">Submit</span></a>
                 <div class="right menu">

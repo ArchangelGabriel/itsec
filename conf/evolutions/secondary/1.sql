@@ -28,9 +28,6 @@ create table product (
   constraint pk_product primary key (id))
 ;
 
-create table sample)
-;
-
 create table stock_item (
   id                        bigint not null,
   warehouse_id              bigint,
@@ -86,8 +83,6 @@ drop table if exists employee;
 drop table if exists warehouse_employee;
 
 drop table if exists product;
-
-drop table if exists sample;
 
 drop table if exists stock_item;
 

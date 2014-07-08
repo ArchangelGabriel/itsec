@@ -18,6 +18,8 @@ import com.ning.http.multipart.FilePart;
 import com.ning.http.multipart.MultipartRequestEntity;
 import com.ning.http.multipart.Part;
 
+import models.Creator;
+import models.Sample;
 import models.h2.Product;
 import models.h2.StockItem;
 import models.mysql.User;
@@ -60,6 +62,11 @@ public class Application extends Controller {
         return ok(index.render());
     }
 
+    public static Result analyses() {
+        List<Sample> sList = Sample.all();
+        return ok(Integer.toString(sList.size()));
+    }
+
     public static Result submit() {
         return ok(submit.render());
     }
@@ -72,34 +79,18 @@ public class Application extends Controller {
         Http.MultipartFormData body = request().body().asMultipartFormData();
         Http.MultipartFormData.FilePart sample = body.getFile("sample");
         if (sample.getFile() != null) {
-//            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-//
-//            // Build up the Multiparts
-//            List<Part> parts = new ArrayList<Part>();
-//            parts.add(new FilePart("file", new File("filename")));
-//            Part[] partsA = parts.toArray(new Part[parts.size()]);
-//
-//            // Add it to the MultipartRequestEntity
-//            MultipartRequestEntity reqE = new MultipartRequestEntity(partsA, null);
-//            reqE.writeRequest(bos);
-//            InputStream reqIS = new ByteArrayInputStream(bos.toByteArray());
-//            WS.WSRequestHolder req = WS.url("http://192.168.251.145:8090/tasks/create/file")
-//                    .setContentType(reqE.getContentType());
-//
-//            req.post(reqIS);
-
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
 
-// Build up the Multiparts
+            // Build up the Multiparts
             List<Part> parts = new ArrayList<>();
             parts.add(new FilePart("file", sample.getFile()));
             Part[] partsA = parts.toArray(new Part[parts.size()]);
 
-// Add it to the MultipartRequestEntity
+            // Add it to the MultipartRequestEntity
             MultipartRequestEntity reqE = new MultipartRequestEntity(partsA, new FluentCaseInsensitiveStringsMap());
             reqE.writeRequest(bos);
             InputStream reqIS = new ByteArrayInputStream(bos.toByteArray());
-            WS.WSRequestHolder req = WS.url("http://192.168.251.145:8090/tasks/create/file")
+            WS.WSRequestHolder req = WS.url("http://192.168.251.146:8090/tasks/create/file")
                     .setContentType(reqE.getContentType());
             req.post(reqIS);
 
@@ -169,7 +160,7 @@ public class Application extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final Form<MySignup> filledForm = MyUsernamePasswordAuthProvider.SIGNUP_FORM.bindFromRequest();
         if (filledForm.hasErrors()) {
-            // User did not fill everything properly
+            // User did not hfill everything properly
             return badRequest(signup.render(filledForm));
         } else {
             // Everything was filled

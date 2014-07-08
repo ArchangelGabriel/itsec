@@ -12,6 +12,7 @@ object Build extends sbt.Build {
       // Comment this for local development of the Play Authentication core
       "com.feth" %% "play-authenticate" % "0.5.2-SNAPSHOT",
       "mysql" % "mysql-connector-java" % "5.1.18",
+      "net.vz.mongodb.jackson" %% "play-mongo-jackson-mapper" % "1.1.0",
       javaCore,
       javaJdbc,
       javaEbean
